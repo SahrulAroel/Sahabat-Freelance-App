@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\File;
 
-class ProductController extends Controller
+class DistributorController extends Controller
 {
     public function index()
     {
