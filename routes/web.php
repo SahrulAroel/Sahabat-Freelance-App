@@ -1,4 +1,6 @@
 <?php
+use App\Http\Controllers\Admin\DistributorController;
+use App\Http\Controllers\Admin\FlashsaleController;
 use App\Http\Controllers\Auth\AuthController; 
 use Illuminate\Support\Facades\Route; 
 use App\Http\Controllers\Admin\AdminController; 
@@ -31,6 +33,24 @@ Route::group(['middleware' => ['admin', 'web']], function() {
     //Product Delete
     Route::delete('/product/delete/{id}', [ProductController::class,'delete'])->name('product.delete');
 
+    //Distributor
+    Route::get('/distributor', [DistributorController::class, 'index'])->name('admin.distributor');
+    Route::get('/distributor/create', [DistributorController::class, 'create'])->name('distributor.create');
+    Route::post('/distributor', [DistributorController::class, 'store'])->name('distributor.store');
+    Route::get('/admin/distributor/detail/{id}', [DistributorController::class,'detail'])->name('distributor.detail');
+
+    Route::get('/distributor/edit/{id}', [DistributorController::class, 'edit'])->name('distributor.edit');
+    Route::post('/distributor/update/{id}', [DistributorController::class, 'update'])->name('distributor.update');
+
+    Route::delete('/distributor/delete/{id}', [DistributorController::class,'delete'])->name('distributor.delete');
+
+    Route::get('/admin/flashsale', [FlashsaleController::class, 'index'])->name('admin.flashsale'); 
+    Route::get('/flashsale/create', [FlashsaleController::class, 'create'])->name('flashsale.create'); 
+Route::post('/flashsale/store', [FlashsaleController::class, 'store'])->name('flashsale.store'); 
+Route::get('/admin/flashsale/detail/{id}', [FlashsaleController::class, 'detail'])->name('flashsale.detail'); 
+Route::get('/flashsale/edit/{id}', [FlashsaleController::class, 'edit'])->name('flashsale.edit'); 
+Route::post('/flashsale/update/{id}', [FlashsaleController::class, 'update'])->name('flashsale.update'); 
+Route::delete('/flashsale/delete/{id}', [FlashsaleController::class, 'delete'])->name('flashsale.delete');
 
 });
 
@@ -42,5 +62,10 @@ Route::group(['middleware' => ['web']], function() {
     Route::get('/user/product/detail/{id}', [UserController::class,'detail_product'])->name('user.detail.product');
     Route::get('/product/purchase/{productId}/{userId}', [UserController::class,'purchase']);
 });
+
+
+
+
+
 
 ?>

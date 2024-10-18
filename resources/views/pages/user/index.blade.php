@@ -73,6 +73,28 @@
                     </div> 
                 @endforelse 
             </div> 
+            <h1>Flash Sale</h1> 
+        <div class="row"> 
+            @forelse($flashsales as $flashSaleItem) 
+                <div class="col-lg-4 col-md-6 mb-4"> 
+                    <div class="product card text-center"> 
+                        <img src="{{ asset('images/' . $flashSaleItem->image) }}" class="card-img-top" alt="{{ $flashSaleItem->product_name }}"> 
+                        <div class="card-body"> 
+                            <h2 class="card-title">{{ $flashSaleItem->product_name }}</h2> 
+                            <p class="card-text"><strike>Rp{{ number_format($flashSaleItem->original_price, 2) }}</strike></p> 
+                            <p class="card-text">Rp{{ number_format($flashSaleItem->discount_price, 2) }}</p> 
+                            <p class="card-text">Diskon: {{ round($flashSaleItem->discount_percentage) }}%</p> 
+                            <p class="card-text">Sisa waktu: {{ \Carbon\Carbon::parse($flashSaleItem->end_time)->diffForHumans() }}</p> 
+                            <p class="card-text">Stok tersisa: {{ $flashSaleItem->stock }}</p> 
+                            <button class="btn btn-primary">Beli Sekarang</button> 
+                        </div> 
+                    </div> 
+                </div> 
+            @empty 
+                <div class="col-lg-12"> 
+                    <h3 class="text-center">Tidak ada produk flash sale saat ini.</h3> 
+                </div> 
+            @endforelse 
     </div>
 </section> 
 <!-- end product Area --> 

@@ -14,7 +14,12 @@
             <li class="{{ Request::is('product*') ? 'active' : '' }}"> 
                <a class="nav-link" href="{{ route('admin.product') }}"><i class="fas fa-box"></i> <span>Produk</span></a>
             </li> 
-
+            <li class="{{ Request::is('distributor*') ? 'active' : '' }}"> 
+               <a class="nav-link" href="{{ route('admin.distributor') }}"><i class="fas fa-boxes"></i> <span>distributor</span></a>
+            </li> 
+            <li class="{{ Request::is('flashsale') ? 'active' : '' }}"> 
+          <a class="nav-link" href="{{ route('admin.flashsale') }}"><i class="fas fa-percentage"></i> 
+          <span>Diskon</span></a></li> 
         </ul>
     </aside>
 </div>
