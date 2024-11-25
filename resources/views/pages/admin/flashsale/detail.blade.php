@@ -20,22 +20,20 @@
             <div class="col-12 col-md-4 col-lg-12 m-auto">
                 <article class="article article-style-c">
                     <div class="article-header">
-                        <div class="article-image" data-background="{{ asset('images/' . $flashSale->image) }}">
+                        <div class="article-image" data-background="{{ asset('images/' . $data->image) }}">
                         </div>
                     </div>
                     <div class="article-details">
                         <div class="article-category">
-                            <a href="#">{{ $flashSale->name }}</a>
+                            <a href="#">{{ $data->name }}</a>
                             <div class="bullet"></div>
-                            <a href="#">{{ $flashSale->category }}</a>
                         </div>
                         <div class="article-title">
-                            <h2><a href="#">Harga Diskon: {{ $flashSale->discount_price }} Points</a></h2>
+                            <h2><a href="#">Harga Diskon: {{ $data->discount_price }} Points</a></h2>
                         </div>
                         <hr>
-                        <p>{{ $flashSale->description }}</p>
-                        <p><strong>Harga Asli: </strong>{{ $flashSale->original_price }} Points</p>
-                        <p><strong>Masa Berlaku: </strong>{{ $flashSale->valid_until }}</p>
+                        <p>{{ $data->description }}</p>
+                        <p><strong>Harga Asli: </strong>{{ $data->price }} Points</p>
                     </div>
                 </article>
             </div>

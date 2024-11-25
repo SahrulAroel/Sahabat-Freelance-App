@@ -29,11 +29,11 @@
                         @php 
                             $no = 0; 
                         @endphp 
-                        @forelse ($flashSales as $item) 
+                        @forelse ($data as $item) 
                             <tr> 
                                 <td>{{ $no += 1 }}</td> 
-                                <td>{{ $item->product_name }}</td> 
-                                <td>{{ $item->original_price }} Points</td> 
+                                <td>{{ $item->product->name }}</td> 
+                                <td>{{ $item->product->price }} Points</td> 
                                 <td>{{ $item->discount_price }} Points</td> 
                                 <td>{{ $item->stock }}</td> 
                                 <td>{{ $item->start_time }}</td> 

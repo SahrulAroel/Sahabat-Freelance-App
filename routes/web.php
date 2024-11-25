@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\Admin\DistributorController;
 use App\Http\Controllers\Admin\FlashsaleController;
+use App\Http\Controllers\Admin\HistoryController;
 use App\Http\Controllers\Auth\AuthController; 
 use Illuminate\Support\Facades\Route; 
 use App\Http\Controllers\Admin\AdminController; 
@@ -39,10 +40,17 @@ Route::group(['middleware' => ['admin', 'web']], function() {
     Route::post('/distributor', [DistributorController::class, 'store'])->name('distributor.store');
     Route::get('/admin/distributor/detail/{id}', [DistributorController::class,'detail'])->name('distributor.detail');
 
+    Route::post('/distributor/import', [DistributorController::class,'import'])->name('distributor.import');
+    Route::get('/distributor/export', [DistributorController::class, 'export'])->name('distributor.export');
+
     Route::get('/distributor/edit/{id}', [DistributorController::class, 'edit'])->name('distributor.edit');
-    Route::post('/distributor/update/{id}', [DistributorController::class, 'update'])->name('distributor.update');
+    Route::put('/distributor/update/{id}', [DistributorController::class, 'update'])->name('distributor.update');
 
     Route::delete('/distributor/delete/{id}', [DistributorController::class,'delete'])->name('distributor.delete');
+
+    Route::get('/history', [HistoryController::class, 'index'])->name('admin.history');
+    Route::get('/history/{id}', [HistoryController::class, 'detail'])->name('history.detail');
+
 
     Route::get('/admin/flashsale', [FlashsaleController::class, 'index'])->name('admin.flashsale'); 
     Route::get('/flashsale/create', [FlashsaleController::class, 'create'])->name('flashsale.create'); 
@@ -51,6 +59,7 @@ Route::get('/admin/flashsale/detail/{id}', [FlashsaleController::class, 'detail'
 Route::get('/flashsale/edit/{id}', [FlashsaleController::class, 'edit'])->name('flashsale.edit'); 
 Route::post('/flashsale/update/{id}', [FlashsaleController::class, 'update'])->name('flashsale.update'); 
 Route::delete('/flashsale/delete/{id}', [FlashsaleController::class, 'delete'])->name('flashsale.delete');
+
 
 });
 
@@ -61,6 +70,11 @@ Route::group(['middleware' => ['web']], function() {
     //Detail Product Users
     Route::get('/user/product/detail/{id}', [UserController::class,'detail_product'])->name('user.detail.product');
     Route::get('/product/purchase/{productId}/{userId}', [UserController::class,'purchase']);
+    Route::get('/flashsale/purchase/{flashSaleId}/{userId}', [UserController::class, 'purchaseFlashSale'])->name('flashsale.purchase');
+
+    Route::get('/user/history/{id}', [UserController::class, 'history'])->name('user.history');
+    Route::get('/user/history/detail/{id}', [UserController::class, 'detail_history'])->name('user.history.history');
+    
 });
 
 

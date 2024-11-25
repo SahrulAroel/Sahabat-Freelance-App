@@ -18,21 +18,25 @@
                     @csrf 
                     <div class="card-body"> 
                         <div class="row"> 
-                            <div class="col-6"> 
+                        <div class="col-6"> 
                                 <div class="form-group"> 
-                                    <label for="product_name">Nama Produk</label> 
-                                    <input id="product_name" type="text" class="form-control" name="product_name" required=""> 
-                                    <div class="invalid-feedback"> 
-                                        Kolom ini harus di isi! 
+                                    <div class="form-group"> 
+                               <label for="id_product">Nama Produk</label> 
+                                 <select name="id_product" class="form-control"> 
+                                            @foreach ($product as $item) <option value="{{ $item->id }}">{{ $item->name }}</option> 
+                                            @endforeach 
+                                        </select> 
                                     </div> 
                                 </div> 
-                            </div> 
+                            </div>  
                             <div class="col-6"> 
                                 <div class="form-group"> 
-                                    <label for="original_price">Harga Asli (Point)</label> 
-                                    <input id="original_price" type="number" class="form-control" name="original_price" required=""> 
-                                    <div class="invalid-feedback"> 
-                                        Kolom ini harus di isi! 
+                                    <div class="form-group"> 
+                               <label for="id_product">Harga Asli</label> 
+                                 <select name="id_product" class="form-control"> 
+                                            @foreach ($product as $item) <option value="{{ $item->id }}">{{ $item->price }}</option> 
+                                            @endforeach 
+                                        </select> 
                                     </div> 
                                 </div> 
                             </div> 

@@ -19,16 +19,12 @@
 
     @include('layouts.user.style')
 </head>
-
-<body>
-    @include('sweetalert::alert')
-
+<body class="index-page">
     @include('layouts.user.navbar')
 
     @yield('content')
 
     @include('layouts.user.footer')
-
     @include('layouts.user.script')
 </body>
 

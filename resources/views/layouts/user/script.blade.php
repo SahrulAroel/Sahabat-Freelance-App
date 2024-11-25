@@ -1,16 +1,12 @@
-<script src="{{ asset('assets/templates/user/js/vendor/jquery-2.2.4.min.js') }}"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384
-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" 
-    crossorigin="anonymous"></script> 
-<script src="{{ asset('assets/templates/user/js/vendor/bootstrap.min.js') }}"></script> 
-<script src="{{ asset('assets/templates/user/js/jquery.ajaxchimp.min.js') }}"></script> 
-<script src="{{ asset('assets/templates/user/js/jquery.nice-select.min.js') }}"></script> 
-<script src="{{ asset('assets/templates/user/js/jquery.sticky.js') }}"></script> 
-<script src="{{ asset('assets/templates/user/js/nouislider.min.js') }}"></script> 
-<script src="{{ asset('assets/templates/user/js/jquery.magnific-popup.min.js') }}"></script> 
-<script src="{{ asset('assets/templates/user/js/owl.carousel.min.js') }}"></script> 
-<!--gmaps Js--> 
-<script 
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script> 
-<script src="{{ asset('assets/templates/user/js/gmaps.min.js') }}"></script> 
-<script src="{{ asset('assets/templates/user/js/main.js') }}"></script> 
+<!-- General JS Scripts -->
+<script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
+<script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
+<script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+<script src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+<script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+<script src="{{ asset('assets/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+<script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+
+<!-- Main JS File -->
+<script src="{{ asset('assets/js/main.js') }}"></script>

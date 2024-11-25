@@ -31,14 +31,6 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('123456789'),
         ]);
 
-        Skripsi::create([
-            'judul' => 'Pengaruh terhadap Lingkungan sekitar', 
-            'nama' => 'Sahrul Gunawan',
-            'nim' => 6304221495,
-            'angkatan' => 2024,
-            'dosenPembimbing1' => 'Fajri Profesio Putra,M.Cs',
-            'dosenPembimbing2' => 'Muhammad Ridho Nosa, ST., M.Kom',
-        ]);
         
     }
 }
